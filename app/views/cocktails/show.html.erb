@@ -4,13 +4,24 @@
   <h2>Ingredients:</h2>
   <ol>
     <% @cocktail.doses.each do |d| %>
-    <li><em><%= d.ingredient.name %> - <%= d.description %></em> (<%= link_to 'Delete Ingredient', dose_path(d), method: 'delete' %>)</li>
+    <li><em><%= d.ingredient.name %> - <%= d.description %></em> (<%= link_to 'Delete Ingredient', dose_path(d), method: 'delete', data: { confirm: "Are you sure you want to delete this ingredient?" } %>)</li>
     <% end %>
   </ol>
 </div>
-
-<div class="bottom-bar">
-<%= link_to 'Index', root_path, class: "btn btn-primary" %>
 <br>
-<%= link_to 'Add Ingredient', new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+<br>
+
+<div id="show-btn-bar">
+  <%= link_to 'Index', root_path, class: "btn btn-primary" %>
+  <br>
+  <%= link_to 'Add Ingredient', new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
 </div>
+
+<div class="cocktail-card-show">
+  <% if @cocktail.photo.attached? %>
+    <%= cl_image_tag @cocktail.photo.key, height: 300, width: 300, crop: :fill, class: "cocktail-image" %>
+  <% end %>
+</div>
+<br>
+<br>
+

@@ -4,7 +4,16 @@
 
 <div class="container">
 <% @cocktails.each do |c| %>
-  <p class="card"><%= link_to c.name, cocktail_path(c), class: "link" %></p>
+  <div class="card">
+    <p><%= link_to c.name, cocktail_path(c), class: "link" %></p>
+    <div class="card-images">
+      <i class="fas fa-cocktail"></i>
+      <% if c.photo.attached? %>
+        <%= cl_image_tag c.photo.key, height: 100, width: 100, crop: :fill, class: "thumbnail" %>
+      <% end %>
+      <i class="fas fa-cocktail"></i>
+    </div>
+  </div>
 <% end %>
 </div>
 <br>

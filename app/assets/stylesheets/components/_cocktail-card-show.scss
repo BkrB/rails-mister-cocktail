@@ -1,0 +1,9 @@
+.cocktail-card-show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .cocktail-image {
+  box-shadow: 5px 5px 18px rgba(0,0,0,0.8);
+  margin: 10px;
+  }
+}
