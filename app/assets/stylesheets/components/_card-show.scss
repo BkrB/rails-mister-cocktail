@@ -1,0 +1,14 @@
+.card-show {
+  display: flex;
+  background-color: white;
+  width: 70vw;
+  margin: 0 auto;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  h2 {
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+}

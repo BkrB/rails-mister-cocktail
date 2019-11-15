@@ -1,0 +1,16 @@
+<h1><%= @cocktail.name %></h1>
+
+<div class="card-show">
+  <h2>Ingredients:</h2>
+  <ol>
+    <% @cocktail.doses.each do |d| %>
+    <li><em><%= d.ingredient.name %> - <%= d.description %></em> (<%= link_to 'Delete Ingredient', dose_path(d), method: 'delete' %>)</li>
+    <% end %>
+  </ol>
+</div>
+
+<div class="bottom-bar">
+<%= link_to 'Index', cocktails_path, class: "btn btn-primary" %>
+<br>
+<%= link_to 'Add Ingredient', new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+</div>

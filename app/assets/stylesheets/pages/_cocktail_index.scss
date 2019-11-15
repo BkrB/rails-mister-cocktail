@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#bottom-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 5em;
+  color: white;
+  font-weight: bold;
+  text-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+}
